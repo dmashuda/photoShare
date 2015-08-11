@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo_post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @photo_post.description %>
+</p>
+
+<%= link_to 'Edit', edit_photo_post_path(@photo_post) %> |
+<%= link_to 'Back', photo_posts_path %>
