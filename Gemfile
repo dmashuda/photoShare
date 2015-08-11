@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 
 gem 'devise'
+gem 'acts-as-taggable-on', '~> 3.4'
 gem "twitter-bootstrap-rails"
 gem 'will_paginate-bootstrap'
 gem 'will_paginate'
