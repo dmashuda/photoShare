@@ -4,7 +4,7 @@ class PhotoPostsController < ApplicationController
   # GET /photo_posts
   # GET /photo_posts.json
   def index
-    @photo_posts = PhotoPost.all
+    @photo_posts = PhotoPost.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /photo_posts/1
