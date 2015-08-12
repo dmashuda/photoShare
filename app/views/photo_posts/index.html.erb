@@ -1,33 +1,12 @@
-<p id="notice"><%= notice %></p>
+<% @photo_posts.each do |photo_post| %>
 
-<h1>Listing Photo Posts</h1>
+    <div>
+      <div><%= photo_post.title %></div>
+      <div><%= photo_post.description %></div>
+      <a href="<%= photo_post_path(photo_post.id) %>">
+        <div><%= image_tag photo_post.image.url %></div>
+      </a>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photo_posts.each do |photo_post| %>
-      <tr>
-        <td><%= photo_post.title %></td>
-        <td><%= photo_post.description %></td>
-        <td><%= image_tag photo_post.image.url %></td>
-        <td><%= link_to 'Show', photo_post %></td>
-        <td><%= link_to 'Edit', edit_photo_post_path(photo_post) %></td>
-        <td><%= link_to 'Destroy', photo_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% end %>
 <%= will_paginate @photo_posts, renderer: BootstrapPagination::Rails %>
-
-<br>
-
-<%= link_to 'New Photo post', new_photo_post_path %>

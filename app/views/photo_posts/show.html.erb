@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @photo_post.title %>
+</p>
+
+<%= image_tag @photo_post.image.url %>
+<p>
+  <strong>Tags:</strong>
+  <%= @photo_post.tag_list %>
 </p>
 
 <p>
