@@ -2,11 +2,13 @@
 
     <div>
       <div><%= photo_post.title %></div>
-      <div><%= photo_post.description %></div>
       <a href="<%= photo_post_path(photo_post.id) %>">
         <div><%= image_tag photo_post.image.url %></div>
       </a>
+      <div><%= photo_post.tag_list %></div>
+      <div><%= photo_post.description %></div>
     </div>
+    <br/>
 
 <% end %>
 <%= will_paginate @photo_posts, renderer: BootstrapPagination::Rails %>
