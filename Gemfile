@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -31,6 +31,9 @@ gem "twitter-bootstrap-rails"
 gem 'will_paginate-bootstrap'
 gem 'will_paginate'
 gem 'simple_form'
+
+gem 'rails_12factor', group: :production
+
 
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
