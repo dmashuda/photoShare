@@ -1,6 +1,6 @@
 ## README
 
-PhotoShare is a generic photo sharing website that I built for sharing pictures with my friends and family so that I can be in control of our data and our pictures.
+PhotoShare is a generic photo sharing website that I built for sharing pictures with my friends and family so that I can be in control of our data and our pictures rather than relying on Google/Facebook/others.
 
 Fairly generic and basic, it supports uploading and tagging photo.
 -----
