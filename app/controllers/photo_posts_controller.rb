@@ -1,5 +1,6 @@
 class PhotoPostsController < ApplicationController
-  before_action :set_photo_post, only: [:show, :edit, :update, :destroy]
+  before_action  :set_photo_post, except: [:index, :tag]
+  before_action :tag_cloud
 
   # GET /photo_posts
   # GET /photo_posts.json
@@ -51,6 +52,11 @@ class PhotoPostsController < ApplicationController
     end
   end
 
+  def tag
+    @photo_posts = PhotoPost.tagged_with(params[:id]).order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
+    render :index
+  end
+
   # DELETE /photo_posts/1
   # DELETE /photo_posts/1.json
   def destroy
@@ -71,4 +77,8 @@ class PhotoPostsController < ApplicationController
     def photo_post_params
       params.require(:photo_post).permit(:title, :description, :tag_list, :image)
     end
+  def tag_cloud
+    @tags = PhotoPost.tag_counts_on(:tags)
+  end
+
 end

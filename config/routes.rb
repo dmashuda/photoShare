@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  resources :photo_posts do
+    collection do
+      get 'tag/:id' => 'photo_posts#tag'
+    end
+  end
   root 'photo_posts#index'
 
   # Example of regular route:

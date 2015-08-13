@@ -2,9 +2,13 @@
 
     <div>
       <div><%= photo_post.title %></div>
-      <a href="<%= photo_post_path(photo_post.id) %>">
-        <div><%= image_tag photo_post.image.url %></div>
-      </a>
+
+        <div>
+          <a href="<%= photo_post_path(photo_post.id) %>">
+            <%= image_tag photo_post.image.url %>
+          </a>
+        </div>
+
       <div><%= photo_post.tag_list %></div>
       <div><%= photo_post.description %></div>
     </div>
@@ -12,3 +16,10 @@
 
 <% end %>
 <%= will_paginate @photo_posts, renderer: BootstrapPagination::Rails %>
+
+<br/>
+
+<h4>Tags:</h4>
+<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
+<% end %>
