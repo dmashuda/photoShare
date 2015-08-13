@@ -13,3 +13,11 @@ user = User.new(
 )
 user.skip_confirmation!
 user.save!
+
+usert = User.new(
+    :email                 => "bdreichelt@gmail.com",
+    :password              => "123456",
+    :password_confirmation => "123456"
+)
+usert.skip_confirmation!
+usert.save!
