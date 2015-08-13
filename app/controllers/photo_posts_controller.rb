@@ -1,5 +1,5 @@
 class PhotoPostsController < ApplicationController
-  before_action  :set_photo_post, except: [:index, :tag]
+  before_action  :set_photo_post, except: [:index, :tag, :new, :create]
   before_action :tag_cloud
 
   # GET /photo_posts
