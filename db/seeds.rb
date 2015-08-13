@@ -7,17 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.new(
-    :email                 => "dmashuda@ycp.edu",
-    :password              => "123456",
-    :password_confirmation => "123456"
-)
-user.skip_confirmation!
-user.save!
-
-usert = User.new(
     :email                 => "bdreichelt@gmail.com",
     :password              => "123456",
     :password_confirmation => "123456"
 )
-usert.skip_confirmation!
-usert.save!
+user.save!(:validate => false)
+
+user2 = User.new(
+    :email                 => "danmashuda@gmail.com",
+    :password              => "123456",
+    :password_confirmation => "123456"
+)
+user2.save!(:validate => false)
