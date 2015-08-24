@@ -18,7 +18,7 @@ module Api
         end
         response[:results] = posts
         response[:current_page] = params[:page] || 0
-        response[:total_entries] = results.total_pages
+        response[:num_pages] = results.total_pages
 
         respond_with response
       end
