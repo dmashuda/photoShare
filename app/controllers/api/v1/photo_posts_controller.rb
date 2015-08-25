@@ -1,6 +1,10 @@
 module Api
   module V1
     class PhotoPostsController < ActionController::Base
+
+      protect_from_forgery with: nil
+      before_action :authenticate_user!
+
       respond_to :json
 
       def index
@@ -33,6 +37,11 @@ module Api
             description: result.description
         }
         respond_with response
+      end
+
+      def new
+        photo_post = PhotoPost.new
+        respond_with photo_post
       end
 
       def create
